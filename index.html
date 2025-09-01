@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Solicitação de Troca de Plantão</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <nav aria-label="Navegação principal">
+      <ul>
+        <li><a href="index.html" aria-current="page">Início</a></li>
+        <li><a href="privacy.html">Privacidade</a></li>
+        <li><a href="faq.html">Plantão</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="card" aria-labelledby="aviso-dados">
+      <p id="aviso-dados" class="aviso">
+        Este site não requer login. Coletamos apenas dados essenciais (nome, e-mail, matrícula, setor e datas) para processar sua solicitação.
+      </p>
+    </section>
+    <section class="card" aria-label="Formulário de troca de plantão">
+      <h1>Solicitação de Troca de Plantão</h1>
+      <form action="https://formsubmit.co/assistente.gerencia@hecad.org.br" method="POST" id="trocaForm" novalidate>
+        <!-- Solicitante -->
+        <fieldset>
+          <legend>Dados do solicitante</legend>
+          <label for="nomeSolicitante">Nome completo *</label>
+          <input type="text" id="nomeSolicitante" name="Nome do solicitante" required autocomplete="name">
+          <span class="erro" id="erroNomeSolicitante"></span>
+
+          <label for="matSolicitante">Matrícula *</label>
+          <input type="text" id="matSolicitante" name="Matrícula do solicitante" required>
+          <span class="erro" id="erroMatSolicitante"></span>
+
+          <label for="emailSolicitante">E-mail *</label>
+          <input type="email" id="emailSolicitante" name="email" required autocomplete="email">
+          <span class="erro" id="erroEmailSolicitante"></span>
+
+          <label for="setorSolicitante">Setor *</label>
+          <input type="text" id="setorSolicitante" name="Setor do solicitante" required>
+          <span class="erro" id="erroSetorSolicitante"></span>
+
+          <label for="dataSolicitacao">Data da solicitação *</label>
+          <input type="date" id="dataSolicitacao" name="Data da solicitação" required>
+          <span class="erro" id="erroDataSolicitacao"></span>
+        </fieldset>
+
+        <!-- Substituto -->
+        <fieldset>
+          <legend>Dados do substituto</legend>
+          <label for="nomeSubstituto">Nome completo *</label>
+          <input type="text" id="nomeSubstituto" name="Nome do substituto" required>
+          <span class="erro" id="erroNomeSubstituto"></span>
+
+          <label for="matSubstituto">Matrícula *</label>
+          <input type="text" id="matSubstituto" name="Matrícula do substituto" required>
+          <span class="erro" id="erroMatSubstituto"></span>
+
+          <label for="emailSubstituto">E-mail *</label>
+          <input type="email" id="emailSubstituto" name="Email do substituto" required>
+          <span class="erro" id="erroEmailSubstituto"></span>
+        </fieldset>
+
+        <!-- Tipo de solicitação -->
+        <fieldset>
+          <legend>Tipo de solicitação *</legend>
+          <label>
+            <input type="radio" name="Tipo de solicitação" value="Troca de plantão" required id="radioTroca" checked>
+            Troca de plantão
+          </label><br>
+          <label>
+            <input type="radio" name="Tipo de solicitação" value="Passar plantão" required id="radioPassar">
+            Passar plantão
+          </label>
+        </fieldset>
+
+        <!-- Datas Troca -->
+        <div id="trocaDatas" class="datas-group">
+          <fieldset>
+            <legend>Datas propostas (Troca)</legend>
+            <label for="dataTrabalharSolicitante">Data a trabalhar (solicitante) *</label>
+            <input type="date" id="dataTrabalharSolicitante" name="Data a trabalhar (solicitante)">
+            <span class="erro" id="erroDataTrabalharSolicitante"></span>
+
+            <label for="dataFolgarSolicitante">Data a folgar (solicitante) *</label>
+            <input type="date" id="dataFolgarSolicitante" name="Data a folgar (solicitante)">
+            <span class="erro" id="erroDataFolgarSolicitante"></span>
+
+            <label for="dataTrabalharSubstituto">Data a trabalhar (substituto) *</label>
+            <input type="date" id="dataTrabalharSubstituto" name="Data a trabalhar (substituto)">
+            <span class="erro" id="erroDataTrabalharSubstituto"></span>
+
+            <label for="dataFolgarSubstituto">Data a folgar (substituto) *</label>
+            <input type="date" id="dataFolgarSubstituto" name="Data a folgar (substituto)">
+            <span class="erro" id="erroDataFolgarSubstituto"></span>
+          </fieldset>
+        </div>
+
+        <!-- Datas Passar -->
+        <div id="passarDatas" class="datas-group" style="display:none;">
+          <fieldset>
+            <legend>Data do plantão a ser passado *</legend>
+            <label for="dataPlantaoPassado">Data do plantão *</label>
+            <input type="date" id="dataPlantaoPassado" name="Data do plantão a ser passado">
+            <span class="erro" id="erroDataPlantaoPassado"></span>
+          </fieldset>
+        </div>
+
+        <!-- Observações -->
+        <label for="observacoes">Observações</label>
+        <textarea id="observacoes" name="Observações" rows="3" placeholder="Turnos, detalhes..."></textarea>
+
+        <!-- Consentimento LGPD -->
+        <label class="lgpd">
+          <input type="checkbox" id="consentimento" name="Consentimento LGPD" required>
+          Li e concordo com a <a href="privacy.html" target="_blank">Política de Privacidade</a> para tratamento dos meus dados com a finalidade de administrar trocas de plantão.
+        </label>
+        <span class="erro" id="erroConsentimento"></span>
+
+        <!-- FormSubmit Hidden -->
+        <input type="hidden" name="_subject" value="Solicitação de troca de plantão">
+        <input type="hidden" id="next" name="_next" value="https://keisystellacarvalho.github.io/trocas-plantao/thanks.html">
+        <input type="hidden" id="cc" name="_cc" value="marianaboccanerapediatra@gmail.com">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="true">
+
+        <button type="submit">Enviar solicitação</button>
+      </form>
+    </section>
+  </main>
+  <footer>
+    <span>&copy; 2025 Troca de Plantão Hospitalar</span>
+    <span>Contato: <a href="mailto:assistente.gerencia@hecad.org.br">assistente.gerencia@hecad.org.br</a></span>
+  </footer>
+  <script src="main.js"></script>
+</body>
+</html>
