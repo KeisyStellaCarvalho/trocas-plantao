@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Painel Administrativo — Troca de Plantão</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .admin-container { max-width: 650px; margin: 2em auto; background: #fff; border-radius: 8px; box-shadow: 0 2px 8px rgba(26,50,99,0.07); padding: 2em;}
+    .solicitacoes-table { width: 100%; border-collapse: collapse;}
+    .solicitacoes-table th, .solicitacoes-table td { border: 1px solid #eee; padding: 0.5em; font-size: 0.97em; }
+    .solicitacoes-table th { background: #eaf2fb; }
+    .status-aprovada { color: green; font-weight: bold;}
+    .status-rejeitada { color: #c62828; font-weight: bold;}
+    .status-pendente { color: #2959a7; font-weight: bold;}
+    .admin-actions button { margin: 0 2px;}
+    .logout-btn { float: right;}
+    #loginForm { max-width: 350px; margin: 2em auto; background: #fff; border-radius: 8px; box-shadow: 0 2px 8px rgba(26,50,99,0.07); padding: 2em;}
+  </style>
+</head>
+<body>
+  <header>
+    <nav aria-label="Navegação principal">
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="privacy.html">Privacidade</a></li>
+        <li><a href="admin.html" aria-current="page">Painel</a></li>
+        <li><a href="faq.html">Plantão</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <div id="adminApp"></div>
+  </main>
+  <footer>
+    <span>&copy; 2025 Troca de Plantão Hospitalar</span>
+    <span>Contato: <a href="mailto:k.s.alves.carvalho@gmail.com">assistente.gerencia@hecad.org.br</a></span>
+  </footer>
+  <script src="admin.js"></script>
+</body>
+</html>
