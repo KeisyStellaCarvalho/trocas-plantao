@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var ccInput = document.getElementById('cc');
     ccInput.value = emailSubstituto + ',marianaboccanerapediatra@gmail.com';
     var nextInput = document.getElementById('next');
-    nextInput.value = "https://SEU_USUARIO.github.io/NOME_REPOSITORIO/thanks.html";
+    nextInput.value = " https://keisystellacarvalho.github.io/trocas-plantao/";
   });
 
   document.getElementById('trocaForm').addEventListener('submit', function (e) {
